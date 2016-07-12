@@ -1,11 +1,11 @@
 // http
 var http = require("http");
 var fs= require('fs');
-var config = require("./config/config.js");
+
 //
 //
-var PORT = config.env.PORT;
-var IP = config.env.IP;
+var PORT = process.env.PORT;
+var IP = process.env.IP;
 if (IP=='127.0.0.1'){
     console.log(">----EJECUTANDO EN MODO LOCAL");
 }
