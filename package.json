@@ -1,0 +1,16 @@
+{
+  "name": "lab002-static-server",
+  "version": "0.0.0",
+  "description": "Servidor web estatico en node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "static-server"
+  ],
+  "author": "janneth.paez03@gmail.com",
+  "license": "ISC"
+}
