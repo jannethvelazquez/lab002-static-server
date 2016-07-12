@@ -1,37 +1,20 @@
 // http
 var http = require("http");
-var fs= require('fs');
-// Obteniendo información del entorno
-// De ejecución con respecto al IP
-// y al puerto que debemos usar en
-// nuestro server 
-var PORT = process.env.PORT || 3000 ;
-var IP = process.env.IP || '127.0.0.1';
-if (IP=='127.0.0.1'){
-    console.log(">-----EJECUTANDO EN MODO LOCAL");
-}
-// Crear un servidor basico
-var server = http.createServer(function(req, res){
-    // Armar la respuesta http
-    // Armar un encabezado http
-    res.writeHead(200,{
-        "Content-Type" : "text/html",
+// crear un servidor basico
+var server = http.createServer(function(req,res){
+    //
+    //
+    res.whiteHead(200,{
+        "Content-Type" : "text/plain",
         "Server" : "ITGAM@4.2.4"
     });
-    // Lectura del arcghivo as ervir 
-    fs.readFile('./static/index.html',
-    'utf8',function(err, content){
-        if(err){
-            res.write("<h1>ERROR DE LECTURA</h1>");
-            
-        }else{
-            res.end(content);
-            
-        }
-    });
-    
+    //
+    res.white("hola mundo");
+    //
+    res.end();
 });
-// Poner a trabjar al server
-server.listen(PORT,IP,function(){
-    console.log(`> Server listening @http://${IP}:${PORT} ...`);
+//poner a trabajar al server
+server.listen(3000, '127.0.0.1',function(){
+    console.log(">Server listering @http://localhost:3000...");
+
 });
